@@ -7,17 +7,13 @@
         <header>
             <h1><a href="/">Scott's Django Girls Blog</a></h1>
         </header>
-
-        <article>
-            <time>published: 11.04.2023, 23:25:17</time>
-            <h2><a href="">Soundwave The Last Decepticon</a></h2>
-            <p>Soundwave is one of my favorite characters</p>
-        </article>
-
-        <article>
-            <time>published: 11.04.2023, 23:30:24</time>
-            <h2><a href="">Starscream</a></h2>
-            <p>Starscream was a clown in the original cartoon, thankfully the gen 2 continuity gave him more of a black comedy backstory</p>
-        </article>
+    <!--Publish All Posts-->
+    {% for post in posts %}
+    <article>
+        <time>published: {{ post.published_date }}</time>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </article>
+    {% endfor %}
     </body>
 </html>
